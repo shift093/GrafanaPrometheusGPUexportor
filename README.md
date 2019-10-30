@@ -1,5 +1,7 @@
 # GrafanaPrometheusGPUexportor
 
+![Alt text](/img/dashboard.jpg "Gpu monitoring dashboard")
+
 ## Prerequested
  STEP0.
  ```
