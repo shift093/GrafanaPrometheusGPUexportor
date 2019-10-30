@@ -73,7 +73,7 @@ spec:
         - name: collector-textfiles
           readOnly: true
           mountPath: /run/prometheus
-      - image: nvidia/dcgm-exporter:1.4.6
+      - image: nvidia/dcgm-exporter:1.0.0-beta
         name: nvidia-dcgm-exporter
         securityContext:
           runAsNonRoot: false
