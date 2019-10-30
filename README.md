@@ -19,6 +19,8 @@
  kubectl apply -f ./*.yaml
  ```
  ### STEP3.進入Grafana
+ ```
  curl localhost:3000
- dashboard id:9957
- Finished!
+ #dashboard id:9957
+ #Finished!
+ ```
