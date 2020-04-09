@@ -6,12 +6,18 @@
  ### STEP0.clone下載
  ```
  git clone https://github.com/shift093/GrafanaPrometheusGPUexportor.git
+ cd GrafanaPrometheusGPUexportor
  ```
  ### STEP1.安裝microk8s
  ```
- sudo snap install microk8s --classic
- sudo  microk8s.status
- sudo microk8s.enable istio gpu 
+ sudo snap install microk8s --classic --channel=1.18/stable
+ sudo apt-get install iptables-persistent
+ sudo iptables -P FORWARD ACCEPT
+ sudo ufw allow in on cbr0 && sudo ufw allow out on cbr0
+ sudo microk8s.status
+ sudo microk8s.enable istio gpu ingress dns
+ (optional)sudo snap alias microk8s.kubectl kubectl
+ (optional)sudo reboot now
  ```
  ### STEP2.k8s腳本
  ```shell
@@ -19,11 +25,40 @@
  sudo microk8s.kubectl get nodes --show-labels
  sudo microk8s.kubectl create namespace monitoring
  sudo microk8s.kubectl apply -f .
- sudo microk8s.kubectl get pod
+ watch sudo microk8s.kubectl get pod
  ```
  ### STEP3.進入Grafana
  ```
- curl localhost:3000#admin/admin
+ curl https://localhost:3000/
+ curl https://localhost:9100/
+ curl https://localhost:9090/
+ 
+ or
+ 
+ lsof -i -P -n | grep :9090
+ lsof -i -P -n | grep :9400
+ lsof -i -P -n | grep :9100
+ 
  #dashboard id:9957
  #Finished!
  ```
+### Delete all service&pod
+```
+cd GrafanaPrometheusGPUexportor
+sudo microk8s.kubectl delete -f .
+sudo microk8s.kubectl delete namespace monitorin
+```
+
+### Rebuild monitoring system
+```
+```
+
+### Disable microk8s
+```
+sudo snap disable microk8s
+```
+ 
+### Remove microk8s
+```
+sudo snap remove microk8s --purge
+```
