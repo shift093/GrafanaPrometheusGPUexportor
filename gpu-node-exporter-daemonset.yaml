@@ -1,7 +1,8 @@
 # cat > gpu-node-exporter-daemonset.yaml<<EOF
 # Custom node-exporter collecting GPU metrics from dcgm-exporter.
 # Refer: https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/prometheus/node-exporter-ds.yml
-apiVersion: extensions/v1beta1
+# apiVersion: extensions/v1beta1 version:15.2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: node-exporter
