@@ -2,7 +2,8 @@
 # Node exporter collecting only GPU metrics from dcgm-exporter.
 # Except textfile collector, all other collectors that are enabled by default are disabled.
 # Refer: https://github.com/prometheus/node_exporter/tree/release-0.16
-apiVersion: extensions/v1beta1
+# apiVersion: extensions/v1beta1 version:15.2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: dcgm-exporter
