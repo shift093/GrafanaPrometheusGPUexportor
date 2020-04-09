@@ -1,5 +1,6 @@
 # cat > pod-gpu-metrics-exporter-daemonset.yaml<<EOF
-apiVersion: extensions/v1beta1
+# apiVersion: extensions/v1beta1 version:15.2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: pod-gpu-metrics-exporter
