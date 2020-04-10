@@ -34,6 +34,11 @@
  ```
  ### STEP3.進入Grafana
  ```
+ cd GrafanaPrometheusGPUexportor
+ wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.3.2.linux-amd64.tar.gz
+ tar -zxvf grafana-5.3.2.linux-amd64.tar.gz
+ bash ./grafana-5.3.2/bin/grafana-server
+ 
  curl localhost:3000
  curl localhost:9100
  curl localhost:9090
@@ -47,6 +52,7 @@
  #dashboard id:9957
  #Finished!
  ```
+ 
 ### Delete all service&pod
 ```
 cd GrafanaPrometheusGPUexportor
