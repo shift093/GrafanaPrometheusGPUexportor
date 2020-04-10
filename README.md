@@ -13,6 +13,9 @@
  ### STEP1.安裝microk8s
  ```
  sudo snap install microk8s --classic --channel=1.18/stable
+ or 
+ sudo snap install microk8s --classic --channel=1.17.2/stable
+
  sudo apt-get install iptables-persistent
  sudo iptables -P FORWARD ACCEPT
  sudo ufw allow in on cbr0 && sudo ufw allow out on cbr0
@@ -31,15 +34,15 @@
  ```
  ### STEP3.進入Grafana
  ```
- curl https://localhost:3000/
- curl https://localhost:9100/
- curl https://localhost:9090/
+ curl localhost:3000
+ curl localhost:9100
+ curl localhost:9090
  
  or
  
- lsof -i -P -n | grep :9090
- lsof -i -P -n | grep :9400
- lsof -i -P -n | grep :9100
+ sudo lsof -i -P -n | grep :9090
+ sudo lsof -i -P -n | grep :3000
+ sudo lsof -i -P -n | grep :9100
  
  #dashboard id:9957
  #Finished!
