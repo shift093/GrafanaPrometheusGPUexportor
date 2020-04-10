@@ -51,7 +51,7 @@
 ```
 cd GrafanaPrometheusGPUexportor
 sudo microk8s.kubectl delete -f .
-sudo microk8s.kubectl delete namespace monitorin
+sudo microk8s.kubectl delete namespace monitoring
 ```
 
 ### Rebuild monitoring system
