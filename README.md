@@ -2,7 +2,7 @@
 
 ![Alt text](/img/dashboard.jpg "Gpu monitoring dashboard")
 
-![Alt text](/img/status.jpg)
+![Alt text](/img/S__31883305.jpg)
 
 ## Prerequested
  ### STEP0.clone下載
