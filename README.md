@@ -73,3 +73,7 @@ sudo snap disable microk8s
 ```
 sudo snap remove microk8s --purge
 ```
+
+### Refernecv
+
+https://www.lagou.com/lgeduarticle/111606.html
