@@ -12,10 +12,7 @@
  ```
  ### STEP1.安裝microk8s
  ```
- sudo snap install microk8s --classic --channel=1.18/stable
- or 
- sudo snap install microk8s --classic --channel=1.17.2/stable
-
+ sudo snap install microk8s --classic --channel=1.15.11/stable
  sudo apt-get install iptables-persistent
  sudo iptables -P FORWARD ACCEPT
  sudo ufw allow in on cbr0 && sudo ufw allow out on cbr0
@@ -72,6 +69,11 @@ sudo snap disable microk8s
 ### Remove microk8s
 ```
 sudo snap remove microk8s --purge
+```
+
+### Refresh
+```
+sudo snap refresh microk8s --classic --channel=1.18/stable
 ```
 
 ### Refernece
