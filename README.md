@@ -26,7 +26,10 @@
  sudo microk8s.kubectl label nodes $hostname hardware-type=NVIDIAGPU
  sudo microk8s.kubectl get nodes --show-labels
  sudo microk8s.kubectl create namespace monitoring
- sudo microk8s.kubectl apply -f .
+ sudo microk8s.kubectl apply -f prometheus-configmap.yaml
+ sudo microk8s.kubectl apply -f prometheus-deployment.yaml
+ sudo microk8s.kubectl apply -f
+ sudo microk8s.kubectl apply -f
  watch sudo microk8s.kubectl get pod --all-namespaces
  ```
  ### STEP3.進入Grafana
