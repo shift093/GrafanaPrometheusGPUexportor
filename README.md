@@ -77,6 +77,7 @@ sudo snap remove microk8s --purge
 ### Refresh
 ```
 sudo snap refresh microk8s --classic --channel=1.18/stable
+sudo snap refresh microk8s --classic --channel=1.15/stable
 ```
 
 ### Refernece
