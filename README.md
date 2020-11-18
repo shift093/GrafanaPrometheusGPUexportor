@@ -28,8 +28,7 @@
  sudo microk8s.kubectl create namespace monitoring
  sudo microk8s.kubectl apply -f prometheus-configmap.yaml
  sudo microk8s.kubectl apply -f prometheus-deployment.yaml
- sudo microk8s.kubectl apply -f
- sudo microk8s.kubectl apply -f
+ sudo microk8s.kubectl apply -f gpu-node-exporter-daemonset.yaml
  watch sudo microk8s.kubectl get pod --all-namespaces
  ```
  ### STEP3.進入Grafana
