@@ -7,13 +7,14 @@
 ## Prerequested
  ### STEP0.clone下載
  ```
+ cd ~/Downloads
  git clone https://github.com/shift093/GrafanaPrometheusGPUexportor.git
- cd GrafanaPrometheusGPUexportor
+ cd ~/Downloads/GrafanaPrometheusGPUexportor/1.18.4
  ```
  ### STEP1.安裝microk8s
  ```
- sudo snap install microk8s --classic --channel=1.19.3/stable
- sudo apt-get install iptables-persistent
+ sudo snap install microk8s --classic --channel=1.19/stable
+ sudo apt-get install iptables-persistent -y
  sudo iptables -P FORWARD ACCEPT
  sudo ufw allow in on cbr0 && sudo ufw allow out on cbr0
  sudo microk8s.status
@@ -23,7 +24,7 @@
  ```
  ### STEP2.k8s腳本
  ```shell
- sudo microk8s.kubectl label nodes $hostname hardware-type=NVIDIAGPU
+ sudo microk8s.kubectl label nodes gpu hardware-type=NVIDIAGPU
  sudo microk8s.kubectl get nodes --show-labels
  sudo microk8s.kubectl create namespace monitoring
  sudo microk8s.kubectl apply -f prometheus-configmap.yaml
@@ -36,13 +37,14 @@
  cd GrafanaPrometheusGPUexportor
  wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.3.2.linux-amd64.tar.gz
  tar -zxvf grafana-5.3.2.linux-amd64.tar.gz
- bash ./grafana-5.3.2/bin/grafana-server
+ ~/Downloads/grafana-5.3.2/bin/grafana-server &
  
  curl localhost:3000
  curl localhost:9100
  curl localhost:9090
  
  or
+ 
  
  sudo lsof -i -P -n | grep :9090
  sudo lsof -i -P -n | grep :3000
