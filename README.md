@@ -37,7 +37,7 @@
  cd GrafanaPrometheusGPUexportor
  wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.3.2.linux-amd64.tar.gz
  tar -zxvf grafana-5.3.2.linux-amd64.tar.gz
- ~/Downloads/grafana-5.3.2/bin/grafana-server &
+ ~/Downloads/grafana/grafana-5.4.3/bin/grafana-server
  
  curl localhost:3000
  curl localhost:9100
